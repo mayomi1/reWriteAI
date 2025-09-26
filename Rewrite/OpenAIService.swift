@@ -15,7 +15,13 @@ final class OpenAIService {
     @AppStorage("SYSTEM_PROMPT") private var systemPrompt: String = "Rewrite the following text to make it clearer and polished."
 
     private var apiKey: String? {
-        devApiKey.isEmpty ? nil : devApiKey
+        if !devApiKey.isEmpty {
+            return devApiKey
+        }
+        if let envApiKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"], !envApiKey.isEmpty {
+            return envApiKey
+        }
+        return nil
     }
     
     enum OpenAIError: Error, LocalizedError {
