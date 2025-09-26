@@ -22,7 +22,7 @@ Built with **SwiftUI** and powered by the **OpenAI API**.
 ## 📦 Installation
 
 ### Option 1: Download DMG (recommended)
-👉 [Releases Page](https://github.com/yourname/rewriteai/releases) (coming soon)
+👉 [Releases Page](https://github.com/mayomi1/rewriteai/releases) (coming soon)
 
 1. Download the latest `.dmg`  
 2. Drag **reWriteAI.app** into your **Applications** folder  
