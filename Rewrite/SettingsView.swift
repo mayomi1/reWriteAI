@@ -1,6 +1,6 @@
 //
 //  SettingsView.swift
-//  Rewrite
+//  reWriteAI
 //
 //  Created by Mayomi Ayandiran on 24/09/2025.
 //

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		BBA8541F2E843D08005F0A8A /* Rewrite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rewrite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA8541F2E843D08005F0A8A /* reWriteAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reWriteAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 		BBA854202E843D08005F0A8A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BBA8541F2E843D08005F0A8A /* Rewrite.app */,
+				BBA8541F2E843D08005F0A8A /* reWriteAI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BBA8541E2E843D08005F0A8A /* Rewrite */ = {
+		BBA8541E2E843D08005F0A8A /* reWriteAI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BBA8542A2E843D09005F0A8A /* Build configuration list for PBXNativeTarget "Rewrite" */;
+			buildConfigurationList = BBA8542A2E843D09005F0A8A /* Build configuration list for PBXNativeTarget "reWriteAI" */;
 			buildPhases = (
 				BBA8541B2E843D08005F0A8A /* Sources */,
 				BBA8541C2E843D08005F0A8A /* Frameworks */,
@@ -63,11 +63,11 @@
 			fileSystemSynchronizedGroups = (
 				BBA854212E843D08005F0A8A /* Rewrite */,
 			);
-			name = Rewrite;
+			name = reWriteAI;
 			packageProductDependencies = (
 			);
-			productName = Rewrite;
-			productReference = BBA8541F2E843D08005F0A8A /* Rewrite.app */;
+			productName = reWriteAI;
+			productReference = BBA8541F2E843D08005F0A8A /* reWriteAI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BBA8541A2E843D08005F0A8A /* Build configuration list for PBXProject "Rewrite" */;
+			buildConfigurationList = BBA8541A2E843D08005F0A8A /* Build configuration list for PBXProject "reWriteAI" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BBA8541E2E843D08005F0A8A /* Rewrite */,
+				BBA8541E2E843D08005F0A8A /* reWriteAI */,
 			);
 		};
 /* End PBXProject section */
@@ -273,7 +273,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.havens360lab.Rewrite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havens360lab.reWriteAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -315,7 +315,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.havens360lab.Rewrite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havens360lab.reWriteAI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -330,7 +330,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BBA8541A2E843D08005F0A8A /* Build configuration list for PBXProject "Rewrite" */ = {
+		BBA8541A2E843D08005F0A8A /* Build configuration list for PBXProject "reWriteAI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBA854282E843D09005F0A8A /* Debug */,
@@ -339,7 +339,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BBA8542A2E843D09005F0A8A /* Build configuration list for PBXNativeTarget "Rewrite" */ = {
+		BBA8542A2E843D09005F0A8A /* Build configuration list for PBXNativeTarget "reWriteAI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBA8542B2E843D09005F0A8A /* Debug */,

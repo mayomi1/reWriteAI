@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BBA8541E2E843D08005F0A8A"
-               BuildableName = "Rewrite.app"
-               BlueprintName = "Rewrite"
+               BuildableName = "reWriteAI.app"
+               BlueprintName = "reWriteAI"
                ReferencedContainer = "container:Rewrite.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BBA8541E2E843D08005F0A8A"
-            BuildableName = "Rewrite.app"
-            BlueprintName = "Rewrite"
+            BuildableName = "reWriteAI.app"
+            BlueprintName = "reWriteAI"
             ReferencedContainer = "container:Rewrite.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BBA8541E2E843D08005F0A8A"
-            BuildableName = "Rewrite.app"
-            BlueprintName = "Rewrite"
+            BuildableName = "reWriteAI.app"
+            BlueprintName = "reWriteAI"
             ReferencedContainer = "container:Rewrite.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

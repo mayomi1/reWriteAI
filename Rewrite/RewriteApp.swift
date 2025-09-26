@@ -1,6 +1,6 @@
 //
 //  RewriteApp.swift
-//  Rewrite
+//  reWriteAI
 //
 //  Created by Mayomi Ayandiran on 24/09/2025.
 //
@@ -8,9 +8,9 @@
 import SwiftUI
 
 @main
-struct RewriteApp: App {
+struct reWriteAIApp: App {
     var body: some Scene {
-        MenuBarExtra("Menu Rewriter", systemImage: "pencil") {
+        MenuBarExtra("reWriteAI", systemImage: "pencil") {
             MenuView()
                 .frame(width: 360)
         }
@@ -18,5 +18,6 @@ struct RewriteApp: App {
         Settings {
             SettingsView()
         }
+    
     }
 }
