@@ -12,7 +12,7 @@ final class OpenAIService {
     static let shared = OpenAIService()
     
     @AppStorage("DEV_OPENAI_API_KEY") private var devApiKey: String = ""
-    @AppStorage("SYSTEM_PROMPT") private var systemPrompt: String = "Rewrite the following text to make it clearer and polished."
+    @AppStorage("SYSTEM_PROMPT") private var systemPrompt: String = Constants.defaultSystemPrompt
 
     private var apiKey: String? {
         if !devApiKey.isEmpty {

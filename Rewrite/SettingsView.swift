@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("DEV_OPENAI_API_KEY") private var devApiKey: String = ""
-    @AppStorage("SYSTEM_PROMPT") private var systemPrompt: String = "Rewrite the following text to make it clearer and polished."
+    @AppStorage("SYSTEM_PROMPT") private var systemPrompt: String = Constants.defaultSystemPrompt
+    @AppStorage("TEMP_SYSTEM_PROMPT") private var tempSystemPrompt: String = ""
     
     var body: some View {
             VStack(alignment: .leading, spacing: 12) {
@@ -30,12 +31,28 @@ struct SettingsView: View {
                     .font(.headline)
             
                 
-                TextEditor(text: $systemPrompt)
+                TextEditor(text: $tempSystemPrompt)
                     .frame(minHeight: 120)
                     .padding(6)
                     .background(Color(NSColor.textBackgroundColor))
                     .cornerRadius(8)
                     .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.blue.opacity(0.6)))
+                
+                HStack {
+                    Button("Reset") {
+                        tempSystemPrompt = Constants.defaultSystemPrompt
+                        systemPrompt = Constants.defaultSystemPrompt
+                    }
+                    .buttonStyle(.bordered)
+                    
+                    Spacer()
+                    
+                    Button("Apply") {
+                        systemPrompt = tempSystemPrompt
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+                .padding(.top, 8)
                 
                 Spacer()
                 
@@ -48,5 +65,10 @@ struct SettingsView: View {
             .padding()
             .frame(width: 400, height: 400)
             .navigationTitle(Text("Settings"))
+            .onAppear {
+                if tempSystemPrompt.isEmpty {
+                    tempSystemPrompt = systemPrompt
+                }
+            }
         }
 }
