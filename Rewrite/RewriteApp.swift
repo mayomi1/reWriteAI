@@ -10,8 +10,13 @@ import SwiftUI
 @main
 struct RewriteApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        MenuBarExtra("Menu Rewriter", systemImage: "pencil") {
+            MenuView()
+                .frame(width: 360)
+        }
+        
+        Settings {
+            SettingsView()
         }
     }
 }
