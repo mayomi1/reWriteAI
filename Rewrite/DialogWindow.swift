@@ -10,8 +10,8 @@ import AppKit
 
 class DialogWindow {
     static func show<Content: View>(@ViewBuilder content: @escaping () -> Content) {
-        let hostingController = NSHostingController(rootView: content())
-        let window = NSWindow(contentViewController: hostingController)
+        let hostingController: NSHostingController<Content> = NSHostingController(rootView: content())
+        let window: NSWindow = NSWindow(contentViewController: hostingController)
         window.styleMask = [.titled, .closable, .resizable]
         window.setContentSize(NSSize(width: 420, height: 480))
         window.title = "Rewrite Menu Text"

@@ -13,6 +13,7 @@ final class OpenAIService {
     
     @AppStorage("DEV_OPENAI_API_KEY") private var devApiKey: String = ""
     @AppStorage("SYSTEM_PROMPT") private var systemPrompt: String = Constants.defaultSystemPrompt
+    @AppStorage("OPENAI_MODEL") private var selectedModel: String = Constants.defaultModel
 
     private var apiKey: String? {
         if !devApiKey.isEmpty {
@@ -48,7 +49,7 @@ final class OpenAIService {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
         let body: [String: Any] = [
-            "model": "gpt-5-nano",
+            "model": selectedModel,
             "messages": [
                 ["role": "system", "content": systemPrompt],
                 ["role": "user", "content": input]

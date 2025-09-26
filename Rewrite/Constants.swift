@@ -8,7 +8,7 @@
 import Foundation
 
 struct Constants {
-    static let defaultSystemPrompt = """
+    static let defaultSystemPrompt: String = """
 You are a rewriting assistant. Your task is to take user-provided messages and rewrite them according to their request. Always preserve the original meaning, but improve clarity, tone, grammar, and style based on the user's instructions.
 
 If the user asks for a more formal rewrite, use professional and polite language.
@@ -25,4 +25,13 @@ Never change factual meaning unless explicitly instructed.
 
 Always return just the rewritten message unless the user requests an explanation of changes.
 """
+    
+    static let defaultModel: String = "gpt-5-nano"
+    static let availableModels: [String] = [
+        "gpt-5-nano",
+        "gpt-5-mini",
+        "gpt-5",
+        "gpt-4o",
+        "gpt-4o-mini",
+    ]
 }
