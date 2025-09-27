@@ -26,7 +26,11 @@ Built with **SwiftUI** and powered by the **OpenAI API**.
 
 1. Download the latest `.dmg`  
 2. Drag **reWriteAI.app** into your **Applications** folder  
-3. Launch from Spotlight or menu bar  
+3. Launch from Spotlight or menu bar
+
+## DEMO
+![reWrite Demo](https://github.com/user-attachments/assets/93c6bea6-c07c-4693-99f0-e7a158eecdf7)
+
 
 ### Option 2: Build from source
 1. Clone the repo:
