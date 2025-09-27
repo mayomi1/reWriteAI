@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+@available(macOS 13.0, *)
 struct SettingsView: View {
     @AppStorage("DEV_OPENAI_API_KEY") private var devApiKey: String = ""
     @AppStorage("SYSTEM_PROMPT") private var systemPrompt: String = Constants.defaultSystemPrompt
     @AppStorage("TEMP_SYSTEM_PROMPT") private var tempSystemPrompt: String = ""
     @AppStorage("OPENAI_MODEL") private var selectedModel: String = Constants.defaultModel
+    @StateObject private var launchAtLoginService = LaunchAtLoginService()
     
     var body: some View {
             VStack(alignment: .leading, spacing: 12) {
@@ -36,6 +38,15 @@ struct SettingsView: View {
                 }
                 .pickerStyle(MenuPickerStyle())
                 .padding(.bottom, 8)
+                
+                Divider()
+                
+                Text("App Behavior")
+                    .font(.headline)
+                
+                Toggle("Launch at Login", isOn: $launchAtLoginService.isEnabled)
+                    .toggleStyle(SwitchToggleStyle())
+                    .padding(.bottom, 8)
                 
                 Divider()
                 
@@ -75,7 +86,7 @@ struct SettingsView: View {
                 Spacer()
             }
             .padding()
-            .frame(width: 400, height: 400)
+            .frame(width: 400, height: 450)
             .navigationTitle(Text("Settings"))
             .onAppear {
                 if tempSystemPrompt.isEmpty {

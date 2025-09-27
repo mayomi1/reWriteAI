@@ -27,11 +27,20 @@ final class OpenAIService {
     
     enum OpenAIError: Error, LocalizedError {
         case badResponse(String)
+        case invalidApiKey
+        case noApiKey
+        case unknownError
 
         var errorDescription: String? {
             switch self {
             case .badResponse(let message):
                 return message
+            case .invalidApiKey:
+                return "Invalid API key. Please check your OpenAI API key in the app settings."
+            case .noApiKey:
+                return "No API key set. Please set your OpenAI API key in the app settings."
+            case .unknownError:
+                return "An unexpected error occurred. Please try again."
             }
         }
     }
@@ -39,7 +48,7 @@ final class OpenAIService {
   
     func rewriteMenuText(input: String) async throws -> String {
         guard let apiKey else {
-            throw NSError(domain: "No API key set", code: 401, userInfo: [NSLocalizedDescriptionKey: "No API key set. Please set one in the app settings."])
+            throw OpenAIError.noApiKey
         }
         
         let url = URL(string: "https://api.openai.com/v1/chat/completions")!
@@ -60,9 +69,27 @@ final class OpenAIService {
 
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let http = response as? HTTPURLResponse, (200...299).contains(http.statusCode) else {
+            let statusCode = (response as? HTTPURLResponse)?.statusCode ?? -1
             let bodyStr = String(data: data, encoding: .utf8) ?? "<no body>"
-            print("❌ API Error — Status: \((response as? HTTPURLResponse)?.statusCode ?? -1), Body: \(bodyStr)")
-            throw OpenAIError.badResponse("Status not OK: \((response as? HTTPURLResponse)?.statusCode ?? -1) — \(bodyStr)")
+            print("❌ API Error — Status: \(statusCode), Body: \(bodyStr)")
+            
+            // Handle specific error cases
+            if statusCode == 401 {
+                // Check if it's an invalid API key error
+                if bodyStr.contains("invalid_api_key") || bodyStr.contains("Incorrect API key") {
+                    throw OpenAIError.invalidApiKey
+                }
+                throw OpenAIError.invalidApiKey
+            }
+            
+            // For other errors, try to parse the JSON response for a user-friendly message
+            if let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+               let error = json["error"] as? [String: Any],
+               let message = error["message"] as? String {
+                throw OpenAIError.badResponse(message)
+            }
+            
+            throw OpenAIError.unknownError
         }
 
         let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]
@@ -72,6 +99,6 @@ final class OpenAIService {
             return content.trimmingCharacters(in: .whitespacesAndNewlines)
         }
 
-        throw OpenAIError.badResponse("something went wrong")
+        throw OpenAIError.unknownError
     }
 }
