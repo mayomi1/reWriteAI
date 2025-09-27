@@ -9,20 +9,20 @@ Built with **SwiftUI** and powered by the **OpenAI API**.
 
 ## 🚀 Features
 
-- 🖥️ Runs from your macOS **menu bar**  
-- 📝 Rewrite any text in a simple dialog box  
-- 🤖 Powered by OpenAI (`gpt-5`, `gpt-5-nano`, `gpt-mini`)  
-- ⚙️ Configurable system prompt (set your preferred rewriting style)  
-- 🔑 Easy **API Key** setup via Settings  
-- 📋 **Copy to Clipboard** button for results  
-- 🔓 100% open source  
+- Runs from your macOS **menu bar**  
+- Rewrite any text in a simple dialog box  
+- Powered by OpenAI (`gpt-5`, `gpt-5-nano`, `gpt-mini`)  
+- Configurable system prompt (set your preferred rewriting style)  
+- Easy **API Key** setup via Settings  
+- **Copy to Clipboard** button for results  
+- 100% open source  
 
 ---
 
 ## 📦 Installation
 
 ### Option 1: Download DMG (recommended)
-👉 [Releases Page](https://github.com/mayomi1/rewriteai/releases) (coming soon)
+👉 [Releases Page](https://github.com/mayomi1/rewriteai/releases)
 
 1. Download the latest `.dmg`  
 2. Drag **reWriteAI.app** into your **Applications** folder  
@@ -31,7 +31,7 @@ Built with **SwiftUI** and powered by the **OpenAI API**.
 ### Option 2: Build from source
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourname/rewriteai.git
+   git clone https://github.com/mayomi1/rewriteai.git
    cd rewriteai
    ```
 2. Open in Xcode:
@@ -66,7 +66,6 @@ In **Settings**, you can adjust:
 - **API Key** (required)  
 - **System Prompt** (tone/style of rewriting, e.g. “Polish this for a professional restaurant menu”)  
 - **Model**: `gpt-5`, `gpt-5-nano`, or `gpt-mini`  
-- **Max Completion Tokens** (optional, defaults to 2000)  
 
 ---
 
